@@ -10,8 +10,4 @@ int main(int argc, char** argv) {
 	app->Run();
 	delete app;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> fe90415d39d646bae8c6ad255144f877f6c804e7
 #endif
