@@ -18,15 +18,17 @@ project "Vertex"
 	targetdir  (outputBaseDir .. "/bin/" .. outputDir .. "/%{prj.name}")
 	objdir (outputBaseDir .. "/bin-int/" .. outputDir .. "/%{prj.name}")
 
+	pchheader "vxpch.h"
+	pchsource "src/vxpch.cpp"
+
 	files {
-		"src/Vertex/**.h", 
-		"src/Vertex/**.cpp",
-		"src/Vertex.h"
+		"src/**.h", 
+		"src/**.cpp"
 	}
 
 	includedirs {
 		"vendor/spdlog/include",
-		"src/Vertex"
+		"src/"
 	}
 
 	filter "system:windows"

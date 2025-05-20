@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.h"
-#include <sstream>
+//#include <sstream>
 
 namespace Vertex {
 	class VERTEX_API WindowResizeEvent : public Event {

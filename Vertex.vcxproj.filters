@@ -4,6 +4,9 @@
     <Filter Include="Vertex">
       <UniqueIdentifier>{E3D3DED7-CF75-09AE-B830-1D02A47190FE}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Vertex\Events">
+      <UniqueIdentifier>{67E2681E-D3A2-E454-9CDD-2DD2085D2931}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Vertex.h" />
@@ -16,13 +19,22 @@
     <ClInclude Include="src\Vertex\EntryPoint.h">
       <Filter>Vertex</Filter>
     </ClInclude>
+    <ClInclude Include="src\Vertex\Events\ApplicationEvent.h">
+      <Filter>Vertex\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vertex\Events\Event.h">
+      <Filter>Vertex\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vertex\Events\KeyEvent.h">
+      <Filter>Vertex\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vertex\Events\MouseEvent.h">
+      <Filter>Vertex\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Vertex\Log.h">
       <Filter>Vertex</Filter>
     </ClInclude>
-    <ClInclude Include="src\Vertex\Events\Event.h" />
-    <ClInclude Include="src\Vertex\Events\KeyEvent.h" />
-    <ClInclude Include="src\Vertex\Events\MousEvent.h" />
-    <ClInclude Include="src\Vertex\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\vxpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Vertex\Application.cpp">
@@ -31,5 +43,6 @@
     <ClCompile Include="src\Vertex\Log.cpp">
       <Filter>Vertex</Filter>
     </ClCompile>
+    <ClCompile Include="src\vxpch.cpp" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Core.h"
-#include <sstream>
-#include <functional>
+//#include <sstre/*am>
+#include <functional>*/
 
 namespace Vertex {
 	enum class EventType {
