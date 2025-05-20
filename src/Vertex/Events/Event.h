@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Core.h"
-//#include <sstre/*am>
-#include <functional>*/
+#include <string>
+#include <functional>
+#include <iostream>
 
 namespace Vertex {
 	enum class EventType {
@@ -61,7 +62,7 @@ namespace Vertex {
 		template<typename T>
 		bool Dispatch(EventFn<T> func) {
 			if (m_Event.GetEventType() == T::GetStaticType()) {
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

@@ -10,6 +10,11 @@ workspace "Vertex"
 outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 outputBaseDir = "."
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "vendor/GLFW/include"
+include "vendor/GLFW"
+
+
 project "Vertex"
 	kind "SharedLib"
 	language "C++"
@@ -28,7 +33,14 @@ project "Vertex"
 
 	includedirs {
 		"vendor/spdlog/include",
-		"src/"
+		"src/",
+		"%(IncludeDir.GLFW)"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
