@@ -19,6 +19,10 @@
     <ClInclude Include="src\Vertex\Log.h">
       <Filter>Vertex</Filter>
     </ClInclude>
+    <ClInclude Include="src\Vertex\Events\Event.h" />
+    <ClInclude Include="src\Vertex\Events\KeyEvent.h" />
+    <ClInclude Include="src\Vertex\Events\MousEvent.h" />
+    <ClInclude Include="src\Vertex\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Vertex\Application.cpp">
