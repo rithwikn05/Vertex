@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Vertex/Window.h"
-
-#include "../vendor/GLFW/include/GLFW/glfw3.h"
+#define GLFW_INCLUDE_NONE
+#include "GLFW/glfw3.h"
 
 namespace Vertex {
 

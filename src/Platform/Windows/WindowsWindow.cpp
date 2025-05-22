@@ -4,6 +4,7 @@
 #include "Vertex/Events/ApplicationEvent.h"
 #include "Vertex/Events/MouseEvent.h"
 #include "Vertex/Events/KeyEvent.h"
+#include <glad/glad.h>
 
 namespace Vertex {
 	static bool s_GLFWInitialized = false;
@@ -41,6 +42,8 @@ namespace Vertex {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		VX_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

@@ -12,7 +12,11 @@ outputBaseDir = "."
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "vendor/GLFW/include"
+IncludeDir["Glad"] = "vendor/Glad/include"
+IncludeDir["ImGui"] = "vendor/imgui"
 include "vendor/GLFW"
+include "vendor/Glad"
+include "vendor/imgui"
 
 
 project "Vertex"
@@ -34,25 +38,30 @@ project "Vertex"
 	includedirs {
 		"vendor/spdlog/include",
 		"src/",
-		"%(IncludeDir.GLFW)"
+		IncludeDir.GLFW,
+		IncludeDir.Glad,
+		IncludeDir.ImGui
 	}
 
 	links {
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 		characterset "Unicode"
 		buildoptions { "/utf-8" }
 
 		defines {
 			"VX_PLATFORM_WINDOWS",
-			"VX_BUILD_DLL"
+			"VX_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands {
@@ -61,14 +70,17 @@ project "Vertex"
 
 	filter "configurations:Debug"
 		defines "VX_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "VX_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "VX_DIST"
+		buildoptions "/MDd"
 		optimize "On"
 
 project "Sandbox"
@@ -97,7 +109,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 		characterset "Unicode"
 		buildoptions { "/utf-8" }
